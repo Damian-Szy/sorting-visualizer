@@ -1,0 +1,24 @@
+.Dropdown{
+    background-color: #5d2ab5;
+    border-color: #5d2ab5;
+    color: #2cd1ab;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.Option{
+    font-size: 20px;
+    color: #2cd1ab;
+}
+
+.Label {
+    background-color: #5d2ab5;
+    border-color: #5d2ab5;
+    color: #2cd1ab;
+    font-size: 20px;
+}
+
+.Div {
+    display: inline;
+    margin: 20px;
+}
