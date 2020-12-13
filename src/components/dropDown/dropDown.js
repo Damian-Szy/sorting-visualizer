@@ -31,17 +31,33 @@ const dropDown = props => {
                 </div>
             )
         case "pivotColor":
-            return (
-                <div className={classes.Div}>
-                <label className={classes.Label} for="cars">Pivot color:</label>
-                <select className={classes.Dropdown} name="color" id="pivotColor" form="colorform" onChange={() => props.changePivotColor(document.getElementById("pivotColor").value)}>
-                    <option className={classes.Option} value="#e31414">Red</option>
-                    <option className={classes.Option} value="#ff59c7">Pink</option>
-                    <option className={classes.Option} value="#f4fc00">Yellow</option>
-                    <option className={classes.Option} value="#002afc">Blue</option>
-                </select>
-                </div>
-            )
+            if (props.sortType === "Quick Sort"){
+                return (
+                    <div className={classes.Div}>
+                    <label className={classes.Label} for="cars">Pivot Color:</label>
+                    <select className={classes.Dropdown} name="color" id="pivotColor" form="colorform" onChange={() => props.changePivotColor(document.getElementById("pivotColor").value)}>
+                        <option className={classes.Option} value="#e31414">Red</option>
+                        <option className={classes.Option} value="#ff59c7">Pink</option>
+                        <option className={classes.Option} value="#f4fc00">Yellow</option>
+                        <option className={classes.Option} value="#002afc">Blue</option>
+                    </select>
+                    </div>
+                )
+            } else{return null}
+        case "minColor":
+            if (props.sortType === "Selection Sort"){
+                return (
+                    <div className={classes.Div}>
+                    <label className={classes.Label} for="cars">Minimum Value Color:</label>
+                    <select className={classes.Dropdown} name="color" id="minColor" form="colorform" onChange={() => props.changePivotColor(document.getElementById("minColor").value)}>
+                        <option className={classes.Option} value="#e31414">Red</option>
+                        <option className={classes.Option} value="#ff59c7">Pink</option>
+                        <option className={classes.Option} value="#f4fc00">Yellow</option>
+                        <option className={classes.Option} value="#002afc">Blue</option>
+                    </select>
+                    </div>
+                ) 
+            }else { return null;}
         case "sortedColor":
             return (
                 <div className={classes.Div}>
@@ -54,9 +70,15 @@ const dropDown = props => {
                 </select>
                 </div>
             )
-        default: return;
+        default: return null;
     }
     
+}
+
+const mapStateToProps = state => {
+    return{
+        sortType: state.sortType
+    }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -68,4 +90,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(dropDown)
+export default connect(mapStateToProps, mapDispatchToProps)(dropDown)

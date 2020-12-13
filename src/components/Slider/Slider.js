@@ -27,7 +27,7 @@ const slider = props => {
 const mapStateToProps = state => {
     return {
         arraySize: state.arraySize,
-        sortSpeed: state.sortSpeed
+        sortSpeed: state.sortSpeed,
     }
 }
 

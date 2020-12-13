@@ -76,3 +76,15 @@ export const changeSortedColor = newColor => {
         newSortedColor: newColor
     }
 }
+
+export const startSorting = () => {
+    return {
+        type: "START_SORTING"
+    }
+}
+
+export const stopSorting = () => {
+    return {
+        type: "STOP_SORTING"
+    }
+}

@@ -3,7 +3,6 @@ const generateArray = size => {
     for (let i = 0; i < size; i++){
         array.push(Math.floor(Math.random() * (350-10) + 10))
     }
-    console.log(array)
     return array
 }
 
@@ -12,39 +11,38 @@ const generateColorArray = (size, arrayColor) => {
     for (let i = 0; i < size; i++){
         array.push(arrayColor) // optional yellow #d18c2c
     }
-    console.log(array)
     return array
 }
 
 const initialState = {
-    arraySize: 20,
+    arraySize: 145,
     sortSpeed: '50',
     sortType: '',
     sorting: false,
+    sorted: false,
     arrayColor: '#ff59c7',
     selectedColor: '#f4fc00',
     pivotColor: '#e31414',
     sortedColor: '#002afc',
-    array: generateArray(20),
-    colorArray: generateColorArray(20, '#ff59c7')
+    array: generateArray(145),
+    colorArray: generateColorArray(145, '#ff59c7')
 }
 
 const reducer = (state=initialState, action) => {
     switch (action.type){
         case "CHANGE_ARRAY_SIZE": 
         return {
-            ...state, arraySize: action.newArraySize*1.0, array: generateArray(action.newArraySize), colorArray: generateColorArray(action.newArraySize, state.arrayColor)
+            ...state, arraySize: action.newArraySize*1.0, array: generateArray(action.newArraySize), colorArray: generateColorArray(action.newArraySize, state.arrayColor), sorted: false
         }
         case "GENERATE_NEW_ARRAY": 
         return {
-            ...state, array: generateArray(state.arraySize), colorArray: generateColorArray(state.arraySize, state.arrayColor)
+            ...state, array: generateArray(state.arraySize), colorArray: generateColorArray(state.arraySize, state.arrayColor), sorted: false
         }
         case "CHANGE_SORTING_SPEED":
             return {
                 ...state, sortSpeed: action.newSpeed
             }
         case "CHANGE_SORTING_METHOD":
-            console.log(action.newMethod)
             return {
                 ...state, sortType: action.newMethod
             }
@@ -68,7 +66,7 @@ const reducer = (state=initialState, action) => {
             }
         case "CHANGE_SELECTED_COLOR":
             return {
-                ...state, selectColor: action.newSelectedColor
+                ...state, selectedColor: action.newSelectedColor
             }
         case "CHANGE_PIVOT_COLOR":
             return {
@@ -77,6 +75,14 @@ const reducer = (state=initialState, action) => {
         case "CHANGE_SORTED_COLOR":
             return {
                 ...state, sortedColor: action.newSortedColor
+            }
+        case "START_SORTING":
+            return {
+                ...state, sorting: true
+            }
+        case "STOP_SORTING":
+            return {
+                ...state, sorting: false, sorted: true
             }
         default: return {...state};
     }

@@ -28,7 +28,6 @@ const FullArray = props => {
     
     // let array = [...props.array]
     // let colorArray = [...props.colorArray]
-    console.log(props)
     let width = window.innerWidth || document.body.clientWidth
     let height = window.innerHeight || document.body.clientHeight
 

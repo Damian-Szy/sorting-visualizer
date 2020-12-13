@@ -10,13 +10,10 @@ const App = props => {
     <div className={classes.App}>
       <header className={classes.Header}>
       <p className={classes.Title}>Sorting Visualizer</p>
-      <Button type="Merge Sort"/>
         <Button type="Quick Sort"/>
-        <Button type="Heap Sort"/>
         <Button type="Bubble Sort"/>
         <Button type="Insertion Sort"/>
         <Button type="Selection Sort"/>
-        <Button type="Bucket Sort"/>
         <div style={{display: 'block'}}>
           <Slider type="sizeChanger"/>
           <Slider type="speedChanger"/>
@@ -24,6 +21,7 @@ const App = props => {
         <div style={{display: 'block'}}>
           <DropDown type="arrayColor"/>
           <DropDown type="lookingColor"/>
+          <DropDown type="minColor"/>
           <DropDown type="pivotColor"/>
           <DropDown type="sortedColor"/>
         </div>
@@ -34,5 +32,6 @@ const App = props => {
     </div>
   );
 }
+
 
 export default App;
