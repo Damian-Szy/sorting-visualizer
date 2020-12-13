@@ -20,7 +20,7 @@ const App = props => {
         </div>
         <div style={{display: 'block'}}>
           <DropDown type="arrayColor"/>
-          <DropDown type="lookingColor"/>
+          <DropDown type="selectedColor"/>
           <DropDown type="minColor"/>
           <DropDown type="pivotColor"/>
           <DropDown type="sortedColor"/>

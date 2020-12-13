@@ -10,7 +10,7 @@ const dropDown = props => {
             return (
                 <div className={classes.Div}>
                 <label className={classes.Label} for="cars">Array Color:</label>
-                <select className={classes.Dropdown} name="color" id="arrayColor" form="colorform" onChange={() => props.changeArrayColor(document.getElementById("arrayColor").value)}>
+                <select className={classes.Dropdown} disabled={props.sorting} style={{color: props.arrayColor}} name="color" id="arrayColor" form="colorform" onChange={() => props.changeArrayColor(document.getElementById("arrayColor").value)}>
                     <option className={classes.Option} value="#ff59c7">Pink</option>
                     <option className={classes.Option} value="#f4fc00">Yellow</option>
                     <option className={classes.Option} value="#002afc">Blue</option>
@@ -18,11 +18,11 @@ const dropDown = props => {
                 </select>
                 </div>
             )
-        case "lookingColor":
+        case "selectedColor":
             return (
                 <div className={classes.Div}>
                 <label className={classes.Label} for="cars">Selected Bar Color:</label>
-                <select className={classes.Dropdown} name="color" id="selectedColor" form="colorform" onChange={() => props.changeSelectedColor(document.getElementById("selectedColor").value)}>
+                <select className={classes.Dropdown} disabled={props.sorting} style={{color: props.selectedColor}} name="color" id="selectedColor" form="colorform" onChange={() => props.changeSelectedColor(document.getElementById("selectedColor").value)}>
                     <option className={classes.Option} value="#f4fc00">Yellow</option>
                     <option className={classes.Option} value="#ff59c7">Pink</option>
                     <option className={classes.Option} value="#002afc">Blue</option>
@@ -35,7 +35,7 @@ const dropDown = props => {
                 return (
                     <div className={classes.Div}>
                     <label className={classes.Label} for="cars">Pivot Color:</label>
-                    <select className={classes.Dropdown} name="color" id="pivotColor" form="colorform" onChange={() => props.changePivotColor(document.getElementById("pivotColor").value)}>
+                    <select className={classes.Dropdown} disabled={props.sorting} style={{color: props.pivotColor}} name="color" id="pivotColor" form="colorform" onChange={() => props.changePivotColor(document.getElementById("pivotColor").value)}>
                         <option className={classes.Option} value="#e31414">Red</option>
                         <option className={classes.Option} value="#ff59c7">Pink</option>
                         <option className={classes.Option} value="#f4fc00">Yellow</option>
@@ -49,7 +49,7 @@ const dropDown = props => {
                 return (
                     <div className={classes.Div}>
                     <label className={classes.Label} for="cars">Minimum Value Color:</label>
-                    <select className={classes.Dropdown} name="color" id="minColor" form="colorform" onChange={() => props.changePivotColor(document.getElementById("minColor").value)}>
+                    <select className={classes.Dropdown} disabled={props.sorting} style={{color: props.pivotColor}} name="color" id="minColor" form="colorform" onChange={() => props.changePivotColor(document.getElementById("minColor").value)}>
                         <option className={classes.Option} value="#e31414">Red</option>
                         <option className={classes.Option} value="#ff59c7">Pink</option>
                         <option className={classes.Option} value="#f4fc00">Yellow</option>
@@ -62,7 +62,7 @@ const dropDown = props => {
             return (
                 <div className={classes.Div}>
                 <label className={classes.Label} for="cars">Sorted array color:</label>
-                <select className={classes.Dropdown} name="color" id="lookingColor" form="colorform" onChange={() => props.changeSortedColor(document.getElementById("lookingColor").value)}>
+                <select className={classes.Dropdown} disabled={props.sorting} style={{color: props.sortedColor}} name="color" id="lookingColor" form="colorform" onChange={() => props.changeSortedColor(document.getElementById("lookingColor").value)}>
                     <option className={classes.Option} value="#002afc">Blue</option>
                     <option className={classes.Option} value="#ff59c7">Pink</option>
                     <option className={classes.Option} value="#f4fc00">Yellow</option>
@@ -77,7 +77,12 @@ const dropDown = props => {
 
 const mapStateToProps = state => {
     return{
-        sortType: state.sortType
+        sortType: state.sortType,
+        sorting: state.sorting,
+        arrayColor: state.arrayColor,
+        selectedColor: state.selectedColor,
+        pivotColor: state.pivotColor,
+        sortedColor: state.sortedColor
     }
 }
 

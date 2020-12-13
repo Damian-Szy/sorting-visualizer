@@ -3,7 +3,11 @@
     border-color: #5d2ab5;
     color: #2cd1ab;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
+}
+
+.Dropdown:disabled{
+    color: gray;
 }
 
 .Option{

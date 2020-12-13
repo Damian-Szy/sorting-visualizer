@@ -39,3 +39,8 @@
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
+  
+.Slider:disabled{
+  background: black;
+  display: none;
+}
