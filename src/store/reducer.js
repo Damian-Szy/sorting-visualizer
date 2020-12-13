@@ -14,8 +14,10 @@ const generateColorArray = (size, arrayColor) => {
     return array
 }
 
+let mobile = (window.innerWidth || document.body.clientWidth) < 600
+
 const initialState = {
-    arraySize: 145,
+    arraySize: mobile ? 80 : 145,
     sortSpeed: '50',
     sortType: '',
     sorting: false,

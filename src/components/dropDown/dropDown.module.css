@@ -16,6 +16,7 @@
 }
 
 .Label {
+    display: inline-block;
     background-color: #5d2ab5;
     border-color: #5d2ab5;
     color: #2cd1ab;

@@ -6,11 +6,12 @@ import RangeSlider from 'react-bootstrap-range-slider';
 import {changeArraySize, changeSortingSpeed} from '../../store/action'
 
 const slider = props => {
+    let mobile = (window.innerWidth || document.body.clientWidth) < 600
     if (props.type === "sizeChanger"){
         return (
             <div className={classes.SliderContainer}>
                 <p style={{color: '#2cd1ab'}}>Size of the Array</p>
-                <RangeSlider className={classes.Slider} disabled={props.sorting} min={10} max={300} value={props.arraySize} onChange={changeEvent => props.changeArraySize(changeEvent.target.value)}/>
+                <RangeSlider className={classes.Slider} disabled={props.sorting} min={10} max={mobile ? 150 : 300} value={props.arraySize} onChange={changeEvent => props.changeArraySize(changeEvent.target.value)}/>
             </div>
         )
     } else if (props.type === "speedChanger"){

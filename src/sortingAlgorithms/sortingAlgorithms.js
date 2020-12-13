@@ -137,7 +137,7 @@ export const insertionSort = async (array, arraySize, changeBarHeight, changeBar
 }
 
 export const selectionSort = async (array, arraySize, changeBarHeight, changeBarColor, sortSpeed, arrayColor, selectedColor, pivotColor, sortedColor) => {
-    sortSpeed = 4000000/(sortSpeed*arraySize*arraySize)
+    sortSpeed = 8000000/(sortSpeed*arraySize*arraySize)
     let localArray = [...array]
     for(let i = 0; i < arraySize; i++) {
         // Finding the smallest number in the subarray

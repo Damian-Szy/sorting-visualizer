@@ -30,11 +30,12 @@ const FullArray = props => {
     // let colorArray = [...props.colorArray]
     let width = window.innerWidth || document.body.clientWidth
     let height = window.innerHeight || document.body.clientHeight
+    let mobile = width < 600;
 
     return (
-    <div className={classes.Parent} style={{left: `${width/9}px`, marginTop: `${height/10}px`}}>
+    <div className={classes.Parent} style={{left: mobile ? '10px' : `${width/9}px`, marginTop: `${height/10}px`}}>
         {props.array.map((divHeight,index) => (
-            <div className={classes.Bar} key={index} style={{backgroundColor: `${props.colorArray[index]}`, height: `${divHeight}px`, width: `${((width*0.8)/props.arraySize)-2}px`}}></div>
+            <div className={classes.Bar} key={index} style={{backgroundColor: `${props.colorArray[index]}`, height: `${divHeight}px`, width: mobile ? '1px' : `${((width*0.8)/props.arraySize)-2}px`}}></div>
         ))}
         
     </div>)

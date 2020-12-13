@@ -1,3 +1,9 @@
+@media (max-width: 600px){
+    .Button{
+        display: block;
+    }
+}
+
 .Button{
     background-color: #474252;
     color: white;
