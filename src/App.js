@@ -9,26 +9,26 @@ const App = props => {
   return (
     <div className={classes.App}>
       <header className={classes.Header}>
-      <p className={classes.Title}>Sorting Visualizer</p>
-        <Button type="Quick Sort"/>
-        <Button type="Bubble Sort"/>
-        <Button type="Insertion Sort"/>
-        <Button type="Selection Sort"/>
-        <div style={{display: 'block'}}>
-          <Slider type="sizeChanger"/>
-          <Slider type="speedChanger"/>
-        </div>
-        <div style={{display: 'block'}}>
-          <DropDown type="arrayColor"/>
-          <DropDown type="selectedColor"/>
-          <DropDown type="minColor"/>
-          <DropDown type="pivotColor"/>
-          <DropDown type="sortedColor"/>
-        </div>
-        <Button type="Generate New Array"/>
-        <FullArray/>
-        <Button type="Sort!"/>
+        <p className={classes.Title}>Sorting Visualizer</p>
       </header>
+      <Button type="Quick Sort"/>
+      <Button type="Bubble Sort"/>
+      <Button type="Insertion Sort"/>
+      <Button type="Selection Sort"/>
+      <div style={{display: 'block'}}>
+        <Slider type="sizeChanger"/>
+        <Slider type="speedChanger"/>
+      </div>
+      <div style={{display: 'block'}}>
+        <DropDown type="arrayColor"/>
+        <DropDown type="selectedColor"/>
+        <DropDown type="minColor"/>
+        <DropDown type="pivotColor"/>
+        <DropDown type="sortedColor"/>
+      </div>
+      <Button type="Generate New Array"/>
+      <Button type="Sort!"/>
+      <FullArray/>
     </div>
   );
 }

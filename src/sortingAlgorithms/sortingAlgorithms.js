@@ -1,6 +1,6 @@
 
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 // functionality ideas
 // dropdown to change colour of array, items looking at, and sorted subarray
@@ -116,7 +116,7 @@ export const bubbleSort = async (array, arraySize, changeBarHeight, changeBarCol
 }
 
 export const insertionSort = async (array, arraySize, changeBarHeight, changeBarColor, sortSpeed, arrayColor, selectedColor, pivotColor, sortedColor) => {
-    sortSpeed = 8000000/(sortSpeed*arraySize*arraySize)
+    sortSpeed = 16000000/(sortSpeed*arraySize*arraySize)
     let localArray = [...array]
     for (let i = 0; i < arraySize; i++) {
         changeBarColor(sortedColor, i)
@@ -124,15 +124,18 @@ export const insertionSort = async (array, arraySize, changeBarHeight, changeBar
         let j = i - 1;
         while (j >= 0 && localArray[j] > key) {
             changeBarColor(selectedColor, j)
-            await sleep(sortSpeed)
+            await sleep(sortSpeed/2)
             changeBarHeight(localArray[j], j+1)
             localArray[j + 1] = localArray[j];
             changeBarColor(sortedColor, j)
             j -= 1;
         }
+        changeBarColor(selectedColor, j+1)
+        await sleep(sortSpeed/2)
         changeBarHeight(key, j+1)
         localArray[j + 1] = key;
         changeBarColor(sortedColor, i)
+        changeBarColor(sortedColor, j+1)
     }
 }
 
