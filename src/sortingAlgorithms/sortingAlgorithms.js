@@ -130,6 +130,7 @@ export const insertionSort = async (array, arraySize, changeBarHeight, changeBar
             changeBarColor(sortedColor, j)
             j -= 1;
         }
+        changeBarColor(selectedColor, i)
         changeBarColor(selectedColor, j+1)
         await sleep(sortSpeed/2)
         changeBarHeight(key, j+1)
