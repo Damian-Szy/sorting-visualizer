@@ -23,7 +23,7 @@ const initialState = {
     sorting: false,
     sorted: false,
     arrayColor: '#ff59c7',
-    selectedColor: '#f4fc00',
+    selectedColor: '#ffe400',
     // pivotColor is also used for minimum
     pivotColor: '#e31414',
     sortedColor: '#002afc',
